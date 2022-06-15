@@ -27,4 +27,4 @@ function checkAge(age) {
 
 
 let a = prompt("Please, enter your age");
-checkAge4(a);
+checkAge(a);

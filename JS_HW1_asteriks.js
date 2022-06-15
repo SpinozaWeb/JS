@@ -65,5 +65,6 @@ function checkAge3(age) {
 }
 
 checkAge3('2');
+checkAge3(-20);
 
 

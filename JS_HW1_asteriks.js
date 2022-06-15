@@ -48,7 +48,7 @@ checkAge2(10);
 // Преобразовать 2* таким образом, чтобы значение '2' (строка в которой лежит ТОЛЬКО ЦИФРА) пропускалось, преобразовываясь в number
 
 function checkAge3(age) {
-    if (!Number(age)) {
+    if (!Number(age) || typeof age == "boolean") {
         return console.log("Error");
     }
     age = Number(age);
@@ -65,6 +65,6 @@ function checkAge3(age) {
 }
 
 checkAge3('2');
-checkAge3(-20);
+checkAge3('false');
 
 

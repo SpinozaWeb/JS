@@ -5,8 +5,8 @@
 
 function checkAge(age) {
     if (!Number(age)) {
-        return console.log("Error");
         alert("Error");
+        console.log("Error");
     }
     age = Number(age);
 

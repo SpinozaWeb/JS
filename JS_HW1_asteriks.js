@@ -24,6 +24,7 @@ checkAge1(61);
 
 // 2*:
 // Преобразовать задание 1* таким образом, чтобы первым делом в функции проверялся тип данных. И если он не Number - кидалась ошибка.
+
 const checkAge2 =function (age) {
     if (typeof(age) != "number") {
         return console.log("Error");
@@ -48,7 +49,7 @@ checkAge2(10);
 // Преобразовать 2* таким образом, чтобы значение '2' (строка в которой лежит ТОЛЬКО ЦИФРА) пропускалось, преобразовываясь в number
 
 function checkAge3(age) {
-    if (!Number(age) || typeof age == "boolean") {
+    if(!+age ||  age===true || !age)  {
         return console.log("Error");
     }
     age = Number(age);
@@ -65,6 +66,9 @@ function checkAge3(age) {
 }
 
 checkAge3('2');
+checkAge3('0jjjj');
 checkAge3('false');
+checkAge3('');
+checkAge3(false);
 
 

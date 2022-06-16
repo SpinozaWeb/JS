@@ -42,6 +42,16 @@ e.g. function getWordStructure(word)
 Проверки: 'case', 'Case', 'Check-list'*/
 
 function getWordStructure(word) {
+    if (word.includes("-")) {
+        word = word.split("-");
+
+    }
+
+    if (word.includes("'")) {
+        word = word.split("'");
+    }
+    word = word.join('');
+
     let vowel_list = 'aeiouAEIOU';
     let vcount = 0;
     let hcount = 0;
@@ -58,7 +68,7 @@ function getWordStructure(word) {
     console.log("слово " + word + " состоит из " + vcount + " гласных и " + hcount + " согласных букв");
 }
 
-getWordStructure('Check-list');
+getWordStructure("Check-list's");
 
 /*4**. Написать функцию, которая проверяет, является ли слово палиндромом
 e.g. function isPalindrom(word)

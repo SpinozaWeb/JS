@@ -51,6 +51,18 @@ function getWordStructure(word) {
         word = word.split("'");
     }
     word = word.join('');
+    // let d = "-";
+    // let a = "'";
+    // for (var x = 0; x < word.length; x++) {
+    //     if (d.indexOf(word[x]) !== -1) {
+    //         word1 = word.split(d);
+    //     } 
+    //     if (a.indexOf(word[x]) !== -1) {
+    //         word2 = word.split(a);
+    //     }
+
+    // }
+
 
     let vowel_list = 'aeiouAEIOU';
     let vcount = 0;

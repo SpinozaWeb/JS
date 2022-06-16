@@ -6,8 +6,14 @@ for (var i = 1; i <= 10; i++) {
 
 /*1*. Преобразовать 1 задачу в функцию, принимающую на вход степень, в которую будет возводиться число 2*/
 
-function mathPow(m) {
+function mathPow1(m) {
     console.log(Math.pow(2, m));
+}
+
+function mathPow2(m) {
+    for (var i = 1; i <= m; i++) {
+        console.log(Math.pow(2, i));
+    }
 }
 
 /*2. Написать скрипт, который выведет 5 строк в консоль таким образом, чтобы в первой строчке выводилось :), во второй :):) и так далее
@@ -42,27 +48,8 @@ e.g. function getWordStructure(word)
 Проверки: 'case', 'Case', 'Check-list'*/
 
 function getWordStructure(word) {
-    if (word.includes("-")) {
-        word = word.split("-");
-
-    }
-
-    if (word.includes("'")) {
-        word = word.split("'");
-    }
-    word = word.join('');
-    // let d = "-";
-    // let a = "'";
-    // for (var x = 0; x < word.length; x++) {
-    //     if (d.indexOf(word[x]) !== -1) {
-    //         word1 = word.split(d);
-    //     } 
-    //     if (a.indexOf(word[x]) !== -1) {
-    //         word2 = word.split(a);
-    //     }
-
-    // }
-
+    word = word.replace('-','');
+    word = word.replace("'",''); - // знаю что можно обойтись 1 регуляркой - не дружу я с ними ночью)
 
     let vowel_list = 'aeiouAEIOU';
     let vcount = 0;

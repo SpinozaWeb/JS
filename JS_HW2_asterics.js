@@ -48,6 +48,7 @@ e.g. function getWordStructure(word)
 Проверки: 'case', 'Case', 'Check-list'*/
 
 function getWordStructure(word) {
+    word_original = word; 
     word = word.replace('-','');
     word = word.replace("'",'');  // знаю что можно обойтись 1 регуляркой - не дружу я с ними ночью)
 
@@ -64,7 +65,7 @@ function getWordStructure(word) {
         }
 
     }
-    console.log("слово " + word + " состоит из " + vcount + " гласных и " + hcount + " согласных букв");
+    console.log("слово " + word_original + " состоит из " + vcount + " гласных и " + hcount + " согласных букв");
 }
 
 getWordStructure("Check-list's");

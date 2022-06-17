@@ -49,7 +49,7 @@ e.g. function getWordStructure(word)
 
 function getWordStructure(word) {
     word = word.replace('-','');
-    word = word.replace("'",''); - // знаю что можно обойтись 1 регуляркой - не дружу я с ними ночью)
+    word = word.replace("'",'');  // знаю что можно обойтись 1 регуляркой - не дружу я с ними ночью)
 
     let vowel_list = 'aeiouAEIOU';
     let vcount = 0;

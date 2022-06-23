@@ -1,10 +1,4 @@
-/*Task 2*
-
-Откройте в VSCode task2.json файл. Скопируйте из него JSONку, вставьте в свой код (присвоив в переменную).
-Дан массив объектов. Каждый объект является идентификационной карточкой человека. Нам нужно хранить только 
-уникальные значения в этом массиве. Реализуйте функцию, которая будет выполнять эту работу.*/ 
-
-const dataset = [
+[
     {
         "name": "Leanne Graham",
         "username": "Bret",
@@ -358,18 +352,3 @@ const dataset = [
         }
     }
 ]
-
-function saveUniqueData(dataset) {
-    let new_dataset = [];
-    dataset.forEach((data) => {
-        new_dataset.push(JSON.stringify(data));
-    })
-    let uniqueArray = new_dataset.filter((val, ind, arr) => arr.indexOf(val) === ind);
-    let x = [];
-    uniqueArray.forEach((arr) => {
-        x.push(JSON.parse(arr));
-    })
-    console.log(x);
-}
-
-saveUniqueData(dataset);

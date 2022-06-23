@@ -1,4 +1,4 @@
-const data = [
+const dataset = [
     {
         "name": "Leanne Graham",
         "username": "Bret",
@@ -353,5 +353,17 @@ const data = [
     }
 ]
 
-var uniqueArray = data.filter((val, ind, arr) => arr.indexOf(val) === ind);
-console.log(uniqueArray);
+function saveUniqueData(dataset) {
+    let new_dataset = [];
+    dataset.forEach((data) => {
+        new_dataset.push(JSON.stringify(data));
+    })
+    let uniqueArray = new_dataset.filter((val, ind, arr) => arr.indexOf(val) === ind);
+    let x = [];
+    uniqueArray.forEach((arr) => {
+        x.push(JSON.parse(arr));
+    })
+    console.log(x);
+}
+
+saveUniqueData(dataset);

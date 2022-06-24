@@ -106,3 +106,16 @@ const currentDate = function (dates) {
 }
 
 currentDate(['10.10.2021', '09.10.2021']);
+
+console.log("______________________________________________________________")
+
+const d = users.filter((item)=>{
+    if(item.registrationDate === '10.10.2021'){
+        return true;
+    } 
+    if(item.registrationDate === '09.10.2021'){
+        return true;
+    } 
+
+});
+console.log(d);

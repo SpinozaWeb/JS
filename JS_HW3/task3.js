@@ -70,28 +70,49 @@ const enterprises = [
 - Отдел охраны труда (5 сотрудников)
 Предприятие 3 (нет сотрудников)
 - Отдел аналитики (нет сотрудников)*/
-//   let all_employes = Number();
-//   enterprises.forEach((enterprise)=>{
-//     enterprise.departments.forEach((department) => {
-//         //all_employes += department.employees_count;
-//         console.log(department.employees_count);
 
-//     });
-//     console.log(enterprise.name+" ("+all_employes + " сотрудников)");
-//     console.log(enterprise.departments);
 
-//   })
+enterprises.forEach((enterprise) => {
+    getAllEmployeesEnterprise(enterprise);
 
+});
+
+function getAllEmployeesEnterprise(enterprise) {
+    let sum = 0;
+    enterprise.departments.forEach((department) => {
+        sum += department.employees_count;
+
+    })
+    if (sum !== 0) {
+        console.log(enterprise.name + " (" + sum + " сотрудников)");
+
+    } else {
+        console.log(enterprise.name + " (нет сотрудников)");
+
+    }
+    enterprise.departments.forEach((department) => {
+        if (department.employees_count === 0) {
+            console.log("- " + department.name + " (нет сотрудников)")
+        } else {
+            console.log("- " + department.name + " (" + department.employees_count + " сотрудников)")
+        }
+        
+    })
+
+}
+
+
+
+console.log('________________________________________________');
 
 /*2. Написать функцию, которая будет принимать 1 аргумент (id отдела или
    название отдела и возвращать название предприятия, к которому относится).
- 
-Пример:
+ Пример:
 getEnterpriseName(4) // Предприятие 1
 getEnterpriseName("Отдел маркетинга") // Предприятие 2*/
 
 function getEnterpriseName(id) {
-    
+
 
 
 }
@@ -120,7 +141,7 @@ function addDepartment(id, str) {
  
 Пример:
 editEnterprise(1, "Новое название предприятия")*/
-function editEnterprise(id, str) {
+function editEnterprise(id, enterpriseName) {
 
 }
 
@@ -130,7 +151,7 @@ function editEnterprise(id, str) {
 Пример:
 editDepartment(7, "Новое название отдела")*/
 
-function editDepartment(id, str) {
+function editDepartment(id, departmentName) {
 
 }
 
@@ -140,9 +161,9 @@ function editDepartment(id, str) {
 deleteEnterprise(1)*/
 
 function deleteEnterprise(id) {
-    let newArray = enterprises.filter(function(f) { return f.id !== id })
+    let newArray = enterprises.filter(function (f) { return f.id !== id })
     console.log(newArray)
-    
+
 }
 deleteEnterprise(1);
 

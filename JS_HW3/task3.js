@@ -125,7 +125,9 @@ addEnterprise("Название нового предприятия")*/
 
 function addEnterprise(str) {
     new_enterprise = {
+        id: 150,
         name: str,
+        departments:[]
     }
     enterprises.push(new_enterprise)
     console.log(enterprises);
@@ -142,11 +144,12 @@ function addDepartment(id, str) {
     enterprises.find((item) => {
         if (item.id === id) {
             new_department = {
-                'name': str,
+                id:100,
+                name: str,
+                employees_count:0
             }
             item.departments.push(new_department);
             console.log(item);
-
         }
 
     });
@@ -163,7 +166,6 @@ function editEnterprise(id, enterpriseName) {
     enterprises.find((item) => {
         if (item.id === id) {
             item.name = enterpriseName;
-            item.id = id;
         }
 
     });
@@ -179,19 +181,20 @@ console.log('__________________________5______________________');
 Пример:
 editDepartment(7, "Новое название отдела")*/
 
-// function editDepartment() {
-//     enterprises.forEach((enterprise) => {
-//         enterprise.departments.find((item) => {
-//             // if (item.id === id) {
-//             //item.name = name;
-//             console.log(item);
+function editDepartment(id_department,new_name_department) {
+    enterprises.forEach(function (element) {
+        element.departments.find(item => {
+            if (item.id == id_department) {
+                item.name = new_name_department;
+                console.log(item);
+            }
+        });
+        
+    });
 
-//         })
-
-//     });
-// }
-
-// editDepartment();
+    
+}
+ editDepartment(7, "Новое название отдела");
 console.log('_______________________6_________________________');
 
 /*7. Написать функцию для удаления предприятия. В качестве аргумента принимает id предприятия.

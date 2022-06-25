@@ -81,14 +81,11 @@ function getAllEmployeesEnterprise(enterprise) {
     let sum = 0;
     enterprise.departments.forEach((department) => {
         sum += department.employees_count;
-
     })
     if (sum !== 0) {
         console.log(enterprise.name + " (" + sum + " сотрудников)");
-
     } else {
         console.log(enterprise.name + " (нет сотрудников)");
-
     }
     enterprise.departments.forEach((department) => {
         if (department.employees_count === 0) {
@@ -96,12 +93,10 @@ function getAllEmployeesEnterprise(enterprise) {
         } else {
             console.log("- " + department.name + " (" + department.employees_count + " сотрудников)")
         }
-        
     })
-
 }
 
-console.log('________________________________________________');
+console.log('_____________________1___________________________');
 
 /*2. Написать функцию, которая будет принимать 1 аргумент (id отдела или
    название отдела и возвращать название предприятия, к которому относится).
@@ -111,17 +106,16 @@ getEnterpriseName("Отдел маркетинга") // Предприятие 2
 
 function getEnterpriseName(id) {
     enterprises.forEach((enterprise) => {
-        enterprise.departments.find((item)=>{
-            if(item.id === id){
+        enterprise.departments.find((item) => {
+            if (item.id === id) {
                 console.log(enterprise.name);
-            } 
-        })    
-    
+            }
+        })
     });
 }
 getEnterpriseName(4);
 
-console.log('________________________________________________');
+console.log('_______________________2_______________________________');
 
 
 /*3. Написать функцию, которая будет добавлять предприятие. В качестве аргумента принимает название предприятия
@@ -130,14 +124,14 @@ console.log('________________________________________________');
 addEnterprise("Название нового предприятия")*/
 
 function addEnterprise(str) {
-    new_enterprise ={
-        name:str,
+    new_enterprise = {
+        name: str,
     }
     enterprises.push(new_enterprise)
     console.log(enterprises);
 }
 addEnterprise("Название нового предприятия");
-console.log('________________________________________________');
+console.log('________________________3________________________');
 
 /*4. Написать функцию, которая будет добавлять отдел в предприятие. В качестве аргумента принимает id предприятия, 
 в которое будет добавлен отдел и название отдела.
@@ -145,27 +139,39 @@ console.log('________________________________________________');
 Пример:
 addDepartment(1, "Название нового отдела")*/
 function addDepartment(id, str) {
+    enterprises.find((item) => {
+        if (item.id === id) {
+            new_department = {
+                'name': str,
+            }
+            item.departments.push(new_department);
+            console.log(item);
 
+        }
+
+    });
 }
-console.log('________________________________________________');
+addDepartment(5, "Название нового отдела");
+
+console.log('__________________________4______________________');
 /*5. Написать функцию для редактирования названия предприятия. Принимает в качестве аргумента id предприятия
  и новое имя предприятия.
  
 Пример:
 editEnterprise(1, "Новое название предприятия")*/
 function editEnterprise(id, enterpriseName) {
-    enterprises.find((item) => { 
-        if(item.id === id){
-            enterprises.name = enterpriseName;
-            enterprises.id = id;
-        }  
-    
+    enterprises.find((item) => {
+        if (item.id === id) {
+            item.name = enterpriseName;
+            item.id = id;
+        }
+
     });
     console.log(enterprises);
-    
+
 }
-editEnterprise(1, "Новое название предприятия")
-console.log('________________________________________________');
+editEnterprise(5, "Новое название предприятия");
+console.log('__________________________5______________________');
 
 /*6. Написать функцию для редактирования названия отдела. Принимает в качестве аргумента id отдела 
 и новое имя отдела.
@@ -173,10 +179,20 @@ console.log('________________________________________________');
 Пример:
 editDepartment(7, "Новое название отдела")*/
 
-function editDepartment(id, departmentName) {
+// function editDepartment() {
+//     enterprises.forEach((enterprise) => {
+//         enterprise.departments.find((item) => {
+//             // if (item.id === id) {
+//             //item.name = name;
+//             console.log(item);
 
-}
-console.log('________________________________________________');
+//         })
+
+//     });
+// }
+
+// editDepartment();
+console.log('_______________________6_________________________');
 
 /*7. Написать функцию для удаления предприятия. В качестве аргумента принимает id предприятия.
  
@@ -185,11 +201,11 @@ deleteEnterprise(1)*/
 
 function deleteEnterprise(id) {
     let newArray = enterprises.filter(function (f) { return f.id !== id })
-    console.log(newArray)
+    console.log(newArray);
 
 }
 deleteEnterprise(1);
-console.log('________________________________________________');
+console.log('________________________7________________________');
 
 /*8. Написать функцию для удаления отдела. В качестве аргумента принимает id отдела. 
 Удалить отдел можно только, если в нем нет сотрудников.
@@ -200,7 +216,7 @@ deleteDepartment(3)*/
 function deleteDepartment(id) {
 
 }
-console.log('________________________________________________');
+console.log('_________________________8_______________________');
 
 /*9. Написать функцию для переноса сотрудников между отделами одного предприятия. 
 В качестве аргумента принимает два значения: id отдела, из которого будут переноситься сотрудники 
@@ -212,5 +228,5 @@ moveEmployees(2, 3)*/
 function moveEmployees(x, y) {
 
 }
-console.log('________________________________________________');
+console.log('_________________________9_______________________');
 

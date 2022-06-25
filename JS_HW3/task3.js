@@ -188,11 +188,8 @@ function editDepartment(id_department,new_name_department) {
                 item.name = new_name_department;
                 console.log(item);
             }
-        });
-        
+        }); 
     });
-
-    
 }
  editDepartment(7, "Новое название отдела");
 console.log('_______________________6_________________________');
@@ -216,9 +213,6 @@ console.log('________________________7________________________');
 Пример:
 deleteDepartment(3)*/
 
-function deleteDepartment(id) {
-
-}
 console.log('_________________________8_______________________');
 
 /*9. Написать функцию для переноса сотрудников между отделами одного предприятия. 

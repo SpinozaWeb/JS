@@ -96,6 +96,7 @@ const company = [
 ---- HR (1)
 */
 
+/*неверное решение для общих случаев, но верное для текущего массива*/
 function getCompany(company) {
     console.log(company[0].name + "(" + company[0].users_count + ")");
 
@@ -117,6 +118,18 @@ function getCompany(company) {
 }
 
 getCompany(company);
+
+/*примерный вариант вывода через рекурсию*/
+function getCompany2(company) {
+    company.forEach((element) => {
+        console.log(element.name + "(" + element.users_count + ")");
+        if (element.children) {
+            getCompany2(element.children);
+        }
+    });
+
+}
+getCompany2(company);
 
 
 

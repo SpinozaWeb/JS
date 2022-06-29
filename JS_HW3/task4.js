@@ -119,17 +119,18 @@ function getCompany(company) {
 
 getCompany(company);
 
-/*примерный вариант вывода через рекурсию*/
-function getCompany2(company) {
+/*верный вариант вывода через рекурсию*/
+function getCompany2(company, counter) {
     company.forEach((element) => {
-        console.log(element.name + "(" + element.users_count + ")");
+        //console.log(element.name + "(" + element.users_count + ")");
+        console.log(`${counter}${counter ==="" ? "" : " "}${element.name} (${element.users_count})`);
         if (element.children) {
-            getCompany2(element.children);
+            counter += "--";
+            getCompany2(element.children, counter);
+            counter = counter.slice(0,-2);
         }
     });
 
 }
-getCompany2(company);
-
-
+getCompany2(company, '');
 
